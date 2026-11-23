@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Test artifacts
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# Local logs and caches
+*.log
+npm-debug.log*
+.vite/
+.cache/
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Harness local state
+.dsh/
+
+# Local env
+*.local
+.env
+.env.*
+!.env.example
