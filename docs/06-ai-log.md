@@ -22,6 +22,7 @@
 |---|---|---|---|---|
 | 2026-11-23 | Подготовка | Анализ ТЗ, план, документация | Прочитал и согласовал идею «Echo» | Выбрал жанр roguelite и механику Эхо |
 | 2026-11-23 | 0.1 | Каркас: Vite 7 + TS 5.9 + Phaser 3.90.0, ESLint 9 flat, Prettier, Vitest, пустая сцена | `npm.cmd run test/lint/build` — exit 0; `dev` открыт в headless Chrome, скриншот, в консоли только `Phaser v3.90.0 (WebGL \| Web Audio)` | Агент упёрся в конфликт `@eslint/js@10` с ESLint 9 — я потребовал зафиксировать ESLint 9; версию Phaser держим точной |
+| 2026-11-23 | 0.3 | Workflow деплоя на GitHub Pages, пуш репозитория `ER01234/Echo` | Run 45165948078 — все шаги success; `https://er01234.github.io/Echo/` — HTTP 200, скриншот, в консоли нет ошибок | Две остановки: токену не хватало scope `workflow` (добавил), а `GITHUB_TOKEN` не может создать сайт Pages — включил Pages в настройках вручную |
 
 ## Мои ключевые решения (дизайн)
 
@@ -30,4 +31,6 @@
 
 ## Случаи, когда AI ошибся
 
+- 0.3: агент понадеялся на `enablement: true` у `actions/configure-pages`, но `GITHUB_TOKEN` не имеет права создавать сайт Pages — шаг упал с `Resource not accessible by integration`. Пришлось один раз включить Pages вручную.
+- 0.1: в `npm install` агент сразу взял `@eslint/js` последней версии, что конфликтует с ESLint 9; исправлено фиксацией мажора.
 - TODO
